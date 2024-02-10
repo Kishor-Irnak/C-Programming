@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int add(int num1, int num2) {
+    return num1 + num2;
+}
+
+int sub(int num1, int num2) {
+    return num1 - num2;
+}
+
+int div(int num1, int num2) {
+    return num1 / num2;
+}
+
+int multi(int num1, int num2) {
+    return num1 * num2;
+}
+
+int main() {
+    int x, y, choice, result;
+
+    printf("Enter First Number: ");
+    scanf("%d", &x);
+    printf("Enter Second Number: ");
+    scanf("%d", &y);
+
+    printf("Enter:\n1 For Add\n2 For Subtract\n3 For divide\n4 For Multiply\n");
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1:
+            result = add(x, y);
+            printf("result = %d \n", result);
+            break;
+        case 2:
+            result = sub(x, y);
+            printf("result = %d \n", result);
+            break;
+        case 3:
+            if (y == 0) {
+                printf("cannot be divided by zero\n");
+            } else {
+                result = div(x, y);
+                printf("result = %d\n", result);
+            }
+            break;
+        case 4:
+            result = multi(x, y);
+            printf("result = %d \n", result);
+            break;
+        default:
+            printf("invalid choice \n");
+            break;
+    }
+
+    return 0;
+}
